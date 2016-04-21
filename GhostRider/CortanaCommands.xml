@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="AwesomeCommandSet_en-us">
+    <AppName> Commander </AppName>
+    <Example> Commands for Commander </Example>
+    <Command Name="createTeam">
+      <Example> Create Team called Earth Defense Force </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> create [a] [new] team called {siteName} </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> {builtin:AppName} create [a] [new] team called {siteName} </ListenFor>
+      <Feedback> Creating a new team portal called {siteName} </Feedback>
+      <VoiceCommandService Target="GhostRiderVoiceCommandService"/>
+    </Command>
+  
+    <Command Name="addTask">
+      <Example> Tell Superman to Save Dallas </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> tell {firstName} to {action} </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> {builtin:AppName} tell {firstName} to {action} </ListenFor>
+      <Feedback> Telling {firstName} to {action} </Feedback>
+      <VoiceCommandService Target="GhostRiderVoiceCommandService"/>
+    </Command>
+
+    <PhraseList Label="siteName">
+      <Item>Dallas Defense Force</Item>
+      <Item>Earth Defense Force</Item>
+      <Item>Sweet Force</Item>
+      <Item>Avengers</Item>
+    </PhraseList>
+
+    <PhraseList Label="firstName">
+      <Item>Superman</Item>
+      <Item>Levi</Item>
+      <Item>Green Lantern</Item>
+      <Item>Batman</Item>
+    </PhraseList>
+
+    <PhraseList Label="action">
+      <Item>Defend North Dallas</Item>
+      <Item>Defend East Dallas</Item>
+      <Item>Defend West Dallas</Item>
+      <Item>Defend South Dallas</Item>
+    </PhraseList>
+    
+  </CommandSet>
+</VoiceCommands>

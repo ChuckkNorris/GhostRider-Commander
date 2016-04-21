@@ -1,0 +1,19 @@
+// Launching URI
+private async void launchURI_Click(object sender, RoutedEventArgs e)
+{
+   // The URI to launch
+   var uriBing = new Uri(@"http://www.bing.com");
+
+   // Launch the URI
+   bool success = await Windows.System.Launcher.LaunchUriAsync(uriBing);
+}
+
+// The URI to launch
+var uriBing = new Uri(@"http://www.bing.com");
+
+// Set the option to show a warning or not
+var promptOptions = new Windows.System.LauncherOptions();
+promptOptions.TreatAsUntrusted = false;
+
+// Launch the URI
+var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOptions);
