@@ -42,7 +42,6 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Models\AddTaskRequest.cs" />
     <Compile Include="Models\BuildSiteRequest.cs" />
     <Compile Include="Models\GetTaskRequest.cs" />
